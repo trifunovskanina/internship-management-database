@@ -1,5 +1,3 @@
--- Dynamic data generation for performance analysis
-
 -- Remove all data for rerun
 TRUNCATE TABLE
     internship_evaluation,
@@ -12,7 +10,7 @@ TRUNCATE TABLE
     contact_information
 RESTART IDENTITY CASCADE;
 
--- Inserting 20 001 students
+
 INSERT INTO person (first_name, last_name)
 SELECT
     'Name' || gs,
@@ -37,7 +35,6 @@ SELECT
 FROM generate_series(1000, 21000) AS gs;
 
 
--- Inserting 80 000 applications
 INSERT INTO internship_application (student_id, internship_id, status)
 SELECT DISTINCT ON (s.id, i.id)
     s.id,
@@ -52,7 +49,7 @@ CROSS JOIN internship i
 ORDER BY s.id, i.id, random()
 LIMIT 80000;
 
--- Inserting 5000 assignments
+
 INSERT INTO internship_assignment (student_id, internship_id, start_date, end_date, semester_id)
 SELECT DISTINCT ON (ia.student_id, ia.internship_id)
     ia.student_id,
@@ -65,7 +62,7 @@ WHERE ia.status = 'ACCEPTED'
 ORDER BY ia.student_id, ia.internship_id
 LIMIT 5000;
 
--- Inserting evaluations
+
 INSERT INTO internship_evaluation (assignment_id, grade, feedback, evaluation_date)
 SELECT
     id,
@@ -75,7 +72,7 @@ SELECT
 FROM internship_assignment
 WHERE random() < 0.7;
 
--- Inserting 5 documents per assignment
+
 INSERT INTO document (assignment_id, document_type, file_path)
 SELECT ia.id,
     CASE
