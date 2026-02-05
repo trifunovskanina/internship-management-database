@@ -1,4 +1,4 @@
-# Internship Management System (PostgreSQL)
+# Internship Management Database (PostgreSQL)
 
 A relational database–centric project for managing student internships.  
 The system models persons, students, mentors, study programs, faculties,
