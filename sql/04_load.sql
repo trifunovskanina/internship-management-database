@@ -20,7 +20,8 @@ TRUNCATE TABLE
     semester,
     study_program,
     faculty,
-    company
+    company,
+    user_account
 RESTART IDENTITY CASCADE;
 
 INSERT INTO faculty (name) VALUES
@@ -36,7 +37,7 @@ INSERT INTO semester (name, start_date, end_date) VALUES
 ('Summer 2024', '2024-06-01', '2024-09-15');
 
 INSERT INTO person (first_name, last_name) VALUES
-('Ana', 'Petrova'),
+('Nina', 'Trifunovska'),
 ('Marko', 'Stojanov'),
 ('Elena', 'Ristova'),
 ('Ivan', 'Trajkovski'),
@@ -46,7 +47,7 @@ INSERT INTO person (first_name, last_name) VALUES
 ('Marija', 'Ilieva'),
 ('Petar', 'Nikolov'),
 ('Jovana', 'Angelova'),
-('Petar', 'Iliev'),
+('Petar', 'Iliev'),  -- 11
 ('Marija', 'Nikolova'),
 ('Stefan', 'Trajkov'),
 ('Ana', 'Kolevska'),
@@ -59,8 +60,19 @@ INSERT INTO person (first_name, last_name) VALUES
 ('Nikola', 'Stankov'),
 ('Teodora', 'Velkova');
 
+
+INSERT INTO user_account (username, password_hash, role, person_id) VALUES
+('admin', '$2a$10$bVOe4n0us0WnU7/Wddce8OP2BbxnSeZvVTXLglgPh1SVOj5byzODq', 'ADMIN', 1),
+('mentor', '$2a$10$mrUTaBziSTwRZY19dYkvjeT4bEyHbfQ/MoXoWvJCPCcIcl1TAGKwq', 'COMPANY_MENTOR', 5),
+('student', '$2a$10$EIvmf2U.EJhg/.Ucz1hA4.E/BfJHgBdooo3seLoHzrG.nPQ/moHii', 'STUDENT', 11);
+
+-- student: $2a$10$EIvmf2U.EJhg/.Ucz1hA4.E/BfJHgBdooo3seLoHzrG.nPQ/moHii
+-- mentor: $2a$10$mrUTaBziSTwRZY19dYkvjeT4bEyHbfQ/MoXoWvJCPCcIcl1TAGKwq
+-- admin: $2a$10$bVOe4n0us0WnU7/Wddce8OP2BbxnSeZvVTXLglgPh1SVOj5byzODq
+
+
 INSERT INTO contact_information (email, person_id) VALUES
-('ana.petrova@uni.edu', 1),
+('nina.trifunovska@uni.edu', 1),
 ('marko.stojanov@uni.edu', 2),
 ('elena.ristova@uni.edu', 3),
 ('ivan.trajkovski@uni.edu', 4),
@@ -123,10 +135,7 @@ INSERT INTO company_mentor (mentor_id, department_id) VALUES
 (9, 4),
 (10, 4);
 
-INSERT INTO internship (
-    title, description, duration_weeks,
-    company_id, company_mentor_id, university_mentor_id
-) VALUES
+INSERT INTO internship (title, description, duration_weeks, company_id, company_mentor_id, university_mentor_id) VALUES
 ('Backend Developer Intern', 'Spring & PostgreSQL backend development', 12, 1, 1, 1),
 ('Data Analyst Intern', 'SQL, reporting, and dashboards', 10, 2, 2, 2),
 ('Cloud Engineer Intern', 'AWS and cloud infrastructure', 12, 3, 3, 3),
@@ -148,8 +157,21 @@ INSERT INTO internship_application (student_id, internship_id, status) VALUES
 (11, 5, 'REJECTED'),
 (12, 6, 'ACCEPTED');
 
-INSERT INTO internship_assignment
-(student_id, internship_id, start_date, end_date, semester_id) VALUES
+INSERT INTO skill (name) VALUES
+('SQL'), ('Java'), ('Spring'), ('React'), ('Machine Learning');
+
+INSERT INTO student_skill (student_id, skill_id) VALUES
+(1, 1),
+(1, 2),
+(2, 1),
+(4, 5);
+
+INSERT INTO internship_skill (internship_id, skill_id) VALUES
+(1, 1),
+(1, 2),
+(5, 5);
+
+INSERT INTO internship_assignment (student_id, internship_id, start_date, end_date, semester_id) VALUES
 (2, 1, '2024-06-01', '2024-08-24', 1),
 (4, 2, '2024-06-05', '2024-08-10', 1),
 (6, 3, '2024-06-10', '2024-09-01', 1),

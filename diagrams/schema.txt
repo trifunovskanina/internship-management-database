@@ -1,3 +1,12 @@
+Table UserAccount {
+  user_id int [pk]
+  username varchar [unique]
+  password_hash varchar
+  role varchar
+  enabled boolean
+  person_id int [unique, ref: > Person.person_id]
+}
+
 Table Person {
   person_id int [pk]
   first_name varchar

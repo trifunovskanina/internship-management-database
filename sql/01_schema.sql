@@ -2,12 +2,28 @@
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
+
 CREATE TABLE person (
     id SERIAL,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
 
     PRIMARY KEY (id)
+);
+
+CREATE TABLE user_account (
+    id SERIAL,
+    username TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    role TEXT NOT NULL,
+    enabled BOOLEAN NOT NULL DEFAULT true,
+    person_id INT NOT NULL UNIQUE,
+
+    CHECK (role IN ('ADMIN', 'UNIVERSITY_MENTOR', 'COMPANY_MENTOR', 'STUDENT')),
+
+    PRIMARY KEY (id),
+
+    FOREIGN KEY (person_id) REFERENCES person(id)
 );
 
 CREATE TABLE contact_information (
@@ -22,6 +38,8 @@ CREATE TABLE contact_information (
     PRIMARY KEY (id),
 
     FOREIGN KEY (person_id) REFERENCES person(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE faculty (
@@ -215,6 +233,8 @@ CREATE TABLE application_document (
     PRIMARY KEY (id),
 
     FOREIGN KEY (application_id) REFERENCES internship_application(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE internship_assignment (
@@ -245,6 +265,8 @@ CREATE TABLE document (
     PRIMARY KEY (id),
 
     FOREIGN KEY (assignment_id) REFERENCES internship_assignment(id)
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE internship_evaluation (
