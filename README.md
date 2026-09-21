@@ -42,9 +42,9 @@ enforcement, and measurable performance considerations using PostgreSQL.
 
 ```
 internship-management-system/
-├── sql/ # Schema, Views, Triggers, Indexes, and Reports
-├── diagrams/ # Conceptual EER and Logical Schema diagrams
-├── performance/ # Indexing discussion and performance screenshots
+├── sql/          # Schema, Views, Triggers, Indexes, and Reports
+├── diagrams/     # Conceptual EER and Logical Schema diagrams
+├── performance/  # Indexing discussion and performance screenshots
 ├── verification/ # Constraint, Trigger, Report, and View checks
 └── README.md
 ```
