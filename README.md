@@ -10,6 +10,14 @@ enforcement, and measurable performance considerations using PostgreSQL.
 
 ---
 
+## Technology Stack
+
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![SQL](https://img.shields.io/badge/SQL-4479A1?logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/current/sql.html/)
+[![PL/pgSQL](https://img.shields.io/badge/PL%2FpgSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/current/plpgsql.html/)
+
+---
+
 ## Features
 
 - Fully normalized relational schema (3NF)
