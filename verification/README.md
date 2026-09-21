@@ -19,7 +19,7 @@ A student cannot apply to the same internship more than once.
 **Result:**  
 The database rejects duplicate `(student_id, internship_id)` pairs via a unique constraint.
 
-<img src="screenshots/constraint.png" width="800"/>
+<img src="screenshots/constraint.png" width="500"/>
 
 ---
 
@@ -33,7 +33,7 @@ A student may only be assigned to an internship if their application status is `
 **Result:**  
 The trigger prevents creating an assignment when the application is not accepted.
 
-<img src="screenshots/trigger1.png" width="800"/>
+<img src="screenshots/trigger1.png" width="500"/>
 
 ---
 
@@ -45,7 +45,7 @@ An internship evaluation cannot be inserted before the internship end date.
 **Result:**  
 The trigger rejects evaluations submitted before the internship has ended.
 
-<img src="screenshots/trigger2.png" width="800"/>
+<img src="screenshots/trigger2.png" width="500"/>
 
 ---
 
@@ -57,7 +57,7 @@ A student cannot have overlapping internship assignments.
 **Result:**  
 The trigger rejects assignments that overlap with an existing active internship.
 
-<img src="screenshots/trigger3.png" width="800"/>
+<img src="screenshots/trigger3.png" width="500"/>
 
 ---
 
@@ -73,7 +73,7 @@ and conditional counting.
 The report correctly displays total applications, accepted applications,
 and calculated acceptance rates.
 
-<img src="screenshots/report.png" width="800"/>
+<img src="screenshots/report.png" width="500"/>
 
 ---
 
@@ -86,7 +86,7 @@ student applications and their statuses.
 **Result:**  
 The view correctly joins students, internships, and application statuses.
 
-<img src="screenshots/view.png" width="800"/>
+<img src="screenshots/view.png" width="500"/>
 
 ---
 
