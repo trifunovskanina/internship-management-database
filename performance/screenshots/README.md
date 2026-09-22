@@ -2,43 +2,44 @@
 
 ## Report 2 – Applications per Internship
 **Without index**
-![Report 2 – No Index](1-no.png)
+<img src="1-no.png" width="800"/>
 
 **With index**
-![Report 2 – With Index](1-with.png)
+<img src="1-with.png" width="800"/>
 
 ---
 
 ## Report 8 – Number of Interns per Company
 **Without index**
 ![Report 8 – No Index](2-no.png)
+<img src="2-no.png" width="800"/>
 
 **With index**
-![Report 8 – With Index](2-with.png)
+<img src="2-with.png" width="800"/>
 
 ---
 
 ## Report 12 – Total Documents Submitted per Student
 **Without index**
-![Report 12 – No Index](3-no.png)
+<img src="3-no.png" width="800"/>
 
 **With index**
-![Report 12 – With Index](3-with.png)
+<img src="3-with.png" width="800"/>
 
 ---
 
 ## Report 15 – Acceptance Rate per Internship
 **Without index**
-![Report 15 – No Index](4-no.png)
+<img src="4-no.png" width="800"/>
 
 **With index**
-![Report 15 – With Index](4-with.png)
+<img src="4-with.png" width="800"/>
 
 ---
 
 ## Report 4 – Internship Participation per Study Program
 **Without index**
-![Report 4 – No Index](5-no.png)
+<img src="5-no.png" width="800"/>
 
 **With index**
-![Report 4 – With Index](5-with.png)
+<img src="5-with.png" width="800"/>
