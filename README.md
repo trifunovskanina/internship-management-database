@@ -92,10 +92,10 @@ The `diagrams/` folder contains:
 The diagrams are consistent with the implemented SQL schema.
 
 ### Logical Schema
-<img src="diagrams/logical-schema.png" width="800"/>
+<img src="diagrams/logical-schema.png" width="600"/>
 
 ### Conceptual EER Diagram
-<img src="diagrams/conceptual_eer.png" width="800"/>
+<img src="diagrams/conceptual_eer.png" width="600"/>
 
 ---
 
