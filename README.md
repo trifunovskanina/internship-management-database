@@ -41,7 +41,7 @@ enforcement, and measurable performance considerations using PostgreSQL.
 ## Project Structure
 
 ```
-internship-management-system/
+internship-management-database/
 ├── sql/          # Schema, Views, Triggers, Indexes, and Reports
 ├── diagrams/     # Conceptual EER and Logical Schema diagrams
 ├── performance/  # Indexing discussion and performance screenshots
